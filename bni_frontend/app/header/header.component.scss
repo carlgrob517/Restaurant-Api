@@ -1,0 +1,24 @@
+.header_area {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  z-index: 20;
+  top: 0;
+  background-color: #45cafd;
+}
+.nav-item a{
+  color: white;
+}
+.nav-item{
+  padding-top: 17px;
+  padding-bottom: 17px;
+}
+
+.active a{
+  color: white;
+}
+
+.btn_get{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,183 @@
+﻿<div class="body_wrapper">
+    <section class="prototype_service_area_two">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+
+                </div>
+                <div class="col-lg-8 form-group text_box" style="margin-bottom: 0rem">
+                    <input type="text" name="searchStr" [(ngModel)]="model.searchStr" placeholder="City or restaurant name" aria-label="Search..." aria-describedby="button-addon2" (keyup)="search()" style="border-radius: 40px">
+                    <span style="position: relative; top: -40px; left: 10px"><i class="ti-location-pin" style="font-size: 20px"></i></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="service_item">
+                        <div class="col-lg-12" style="margin-left: 15px">
+                            <h5 class="mt_30 mb_15"><span><i class="ti-hand-point-down"></i></span> Top restaurtants</h5>
+                            <form>
+                                <input type="radio" [(ngModel)]="model.city" name="city" value="Enniskillen" id="Enniskillen"><label class="label" for="Enniskillen"> Enniskillen</label><br>
+                                <input type="radio" [(ngModel)]="model.city" name="city" value="Omagh" id="Omagh"><label class="label" for="Omagh"> Omagh</label><br>
+                                <input type="radio" [(ngModel)]="model.city" name="city" value="Strabane" id="Strabane"><label class="label" for="Strabane"> Strabane</label><br>
+                                <input type="radio" [(ngModel)]="model.city" name="city" value="Dungannon" id="Dungannon"><label class="label" for="Dungannon"> Dungannon</label><br>
+                                <input type="radio" [(ngModel)]="model.city" name="city" value="Cookstown" id="Cookstown"><label class="label" for="Cookstown"> Cookstown</label><br>
+                                <input type="radio" [(ngModel)]="model.city" name="city" value="Londonderry" id="Londonderry"><label class="label" for="Londonderry"> Londonderry</label><br>
+                                <input type="radio" [(ngModel)]="model.city" name="city" value="Coleraine" id="Coleraine"><label class="label" for="Coleraine"> Coleraine</label><br>
+                                <input type="radio" [(ngModel)]="model.city" name="city" value="Armagh City" id="Armagh City"><label class="label" for="Armagh City"> Armagh City</label><br>
+                                <input type="radio" [(ngModel)]="model.city" name="city" value="Newry" id="Newry"><label class="label" for="Newry"> Newry</label><br>
+                                <input type="radio" [(ngModel)]="model.city" name="city" value="Portadown" id="Portadown"><label class="label" for="Portadown"> Portadown</label><br>
+                                <input type="radio" [(ngModel)]="model.city" name="city" value="Lurgan" id="Lurgan"><label class="label" for="Lurgan"> Lurgan</label><br>
+                                <input type="radio" [(ngModel)]="model.city" name="city" value="Craigavon" id="Craigavon"><label class="label" for="Craigavon"> Craigavon</label><br>
+                                <input type="radio" [(ngModel)]="model.city" name="city" value="Belfast" id="Belfast"><label class="label" for="Belfast"> Belfast</label><br>
+                                <input type="radio" [(ngModel)]="model.city" name="city" value="Ballymena" id="Ballymena"><label class="label" for="Ballymena"> Ballymena</label><br>
+                                <input type="radio" [(ngModel)]="model.city" name="city" value="Larne" id="Larne"><label class="label" for="Larne"> Larne</label><br>
+                                <input type="radio" [(ngModel)]="model.city" name="city" value="Antrim" id="Antrim"><label class="label" for="Antrim"> Antrim</label><br>
+                                <input type="radio" [(ngModel)]="model.city" name="city" value="Ballycastle" id="Ballycastle"><label class="label" for="Ballycastle"> Ballycastle</label><br>
+                                <input type="radio" [(ngModel)]="model.city" name="city" value="Bangor" id="Bangor"><label class="label" for="Bangor"> Bangor</label><br>
+                                <input type="radio" [(ngModel)]="model.city" name="city" value="Newtownards" id="Newtownards"><label class="label" for="Newtownards"> Newtownards</label><br>
+                                <input type="radio" [(ngModel)]="model.city" name="city" value="Lisburn" id="Lisburn"><label class="label" for="Lisburn"> Lisburn</label><br>
+
+                                <button type="submit" (click)="top_search()" class="btn_hover agency_banner_btn" style="border-radius: 30px; padding: 7px; border: none">View</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div style="margin-bottom: 20px">
+                        <form class="row">
+                            <div class="col-lg-3">
+                                <select class="custom-select" name="alias" [(ngModel)]="model.alias">
+                                    <option value="">Restaurant</option>
+                                    <option value="burgers">Burgers</option>
+                                    <option value="japanese">Japanese</option>
+                                    <option value="chinese">Chinese</option>
+                                    <option value="mexican">Mexican</option>
+                                    <option value="italian">Italian</option>
+                                    <option value="thai">Thailand</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-3">
+                                <select class="custom-select" name="rating" [(ngModel)]="model.rating" id="inputGroupSelect01">
+                                    <option value="">Rating</option>
+                                    <option value="0.0">0</option>
+                                    <option value="0.5">0.5</option>
+                                    <option value="1.0">1</option>
+                                    <option value="1.5">1.5</option>
+                                    <option value="2.0">2</option>
+                                    <option value="2.5">2.5</option>
+                                    <option value="3.0">3</option>
+                                    <option value="3.5">3.5</option>
+                                    <option value="4.0">4</option>
+                                    <option value="4.5">4.5</option>
+                                    <option value="5.0">5</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-3">
+                                <select class="custom-select" name="location" [(ngModel)]="model.location">
+                                    <option value="">City</option>
+                                    <option value="Enniskillen">Enniskillen</option>
+                                    <option value="Omagh">Omagh</option>
+                                    <option value="Strabane">Strabane</option>
+                                    <option value="Dungannon">Dungannon</option>
+                                    <option value="Cookstown">Cookstown</option>
+                                    <option value="Londonderry">Londonderry</option>
+                                    <option value="Coleraine">Coleraine</option>
+                                    <option value="Armagh City">Armagh City</option>
+                                    <option value="Newry">Newry</option>
+                                    <option value="Portadown">Portadown</option>
+                                    <option value="Lurgan">Lurgan</option>
+                                    <option value="Craigavon">Craigavon</option>
+                                    <option value="Belfast">Belfast</option>
+                                    <option value="Ballymena">Ballymena</option>
+                                    <option value="Larne">Larne</option>
+                                    <option value="Antrim">Antrim</option>
+                                    <option value="Ballycastle">Ballycastle</option>
+                                    <option value="Bangor">Bangor</option>
+                                    <option value="Newtownards">Newtownards</option>
+                                    <option value="Lisburn">Lisburn</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-3">
+                                <button class="btn_hover agency_banner_btn" type="submit" (click)="searchByDetails()" style="border-radius: 30px; padding: 7px; background-color: #33a680; border: none">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row">
+                        <div *ngFor="let item of pagedItems" class="col-lg-12 lg-margin" (click)="each_search(item)">
+                            <div class="row service_item" [ngSwitch]="item.rating">
+                                <div class="col-lg-4 lg-pad-left">
+                                    <img *ngIf="item.image_url != ''" class="float-left" src="{{ item.image_url }}" alt="" id="stock">
+                                    <img *ngIf="item.image_url == ''" class="float-left" src="../../assets/img/cart2.png" alt="" id="stock">
+                                    <!--<div class="icon s_icon_one"><i class="ti-check"></i></div>-->
+                                </div>
+                                <div class="col-lg-8" style="padding-top: 20px">
+                                    <h4 class="f_600 f_size_20 l_height28 t_color2 mb_20" style="margin: 0 0 0 0">{{ item.name }}</h4>
+                                    <p>
+                                        <span style="margin-right: 20px;">
+                                            <img *ngSwitchCase="1" src="http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s1.0-MCID-5.svg">
+                                            <img *ngSwitchCase="2" src="http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s2.0-MCID-5.svg">
+                                            <img *ngSwitchCase="3" src="http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s3.0-MCID-5.svg">
+                                            <img *ngSwitchCase="4" src="http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s4.0-MCID-5.svg">
+                                            <img *ngSwitchCase="5" src="http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s5.0-MCID-5.svg">
+                                            <img *ngSwitchDefault src="http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s{{item.rating}}-MCID-5.svg">
+                                        </span> {{item.review_count}} reviews
+                                    </p>
+                                    <p style="margin: 0px">{{ item.alias }}</p>
+                                    <p style="margin: 0px">{{ item.location.display_address[0] }}</p>
+                                    <p style="margin: 0px">{{ item.location.display_address[1] }}</p>
+                                    <p style="margin: 0px">{{ item.location.display_address[2] }}</p>
+                                    <button class="btn btn-outline-info btn-sm float-right" (click)="viewAll(item._id['$oid'], item.name)" style="border-radius: 16px">View All</button>
+                                    <button class="btn btn-outline-warning btn-sm float-right mr-2" (click)="write(item)"  style="border-radius: 16px">Write</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-8">
+                    <ul *ngIf="pager.pages && pager.pages.length" class="pagination d-flex justify-content-center mt-5">
+                        <li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item disabled">
+                            <a class="page-link" (click)="setPage(1)">First</a>
+                        </li>
+                        <li [ngClass]="{disabled:pager.currentPage === 1}" class="page-item disabled">
+                            <a class="page-link" (click)="setPage(pager.currentPage - 1)">Previous</a>
+                        </li>
+                        <li class="page-item" *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                            <a class="page-link" (click)="setPage(page)">{{page}}</a>
+                        </li>
+                        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}" class="page-item disabled">
+                            <a class="page-link" (click)="setPage(pager.currentPage + 1)">Next</a>
+                        </li>
+                        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}" class="page-item disabled">
+                            <a class="page-link" (click)="setPage(pager.totalPages)">Last</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer_area footer_area_four pt_150 f_bg"  style="padding-top: 10px">
+        <div class="footer_bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 col-md-5 col-sm-6">
+                        <p class="mb-0 f_400">Copyright © 2020</p>
+                    </div>
+                    <div class="col-lg-4 col-md-3 col-sm-6">
+
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <ul class="list-unstyled f_menu text-right">
+                            <li><a href="#">Terms of Use</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>

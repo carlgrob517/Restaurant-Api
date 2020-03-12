@@ -1,0 +1,177 @@
+﻿<div class="body_wrapper">
+    <section class="agency_about_area d-flex bg_color" style="margin-top: 55px">
+        <div class="col-lg-6 about_content_left ">
+            <div class="about_content mb_30" style="padding: 30px; background: transparent">
+                <h2 class="f_size_30 f_700 l_height45 mb_20" style="color: #222d39">Contact</h2>
+                <div style="width: 100%; height: 310px">
+                    <div #map class="service_item" style="padding: 15px"></div>
+                </div>
+                <p style="padding-top: 30px;color: #677294"><span><i class="ti-location-pin"></i></span>{{info.location.display_address[0]}}, {{info.location.display_address[1]}}, {{info.location.display_address[2]}}</p>
+                <p style="color: #677294"><span><i class="ti-location-arrow"></i></span>{{info.location.city}} city</p>
+                <p style="color: #677294"><span><i class="ti-link"></i></span><a href="{{info.url}}" style="color: #677294">Website</a></p>
+                <div class="sign_info" style="border: none; background: none; padding: 0px;">
+                    <div class="social_text d-flex">
+                        <ul class="social_tag mb-0" style="position: relative; right: -89px; top: -50px">
+                            <li><a href="https://www.facebook.com/login/device-based/regular/login"><i class="ti-facebook"></i></a></li>
+                            <li><a href="https://www.instagram.com/accounts/login/"><i class="ti-instagram"></i></a></li>
+                            <li><a href="https://twitter.com/login"><i class="ti-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 about_img">
+            <a href="#" class="pluse_icon"><i class="ti-bookmark"></i></a>
+            <div class="about_img_slider">
+                <div class="item">
+                    <div class="about_item w45">
+                        <img src="{{info.id_info.photos[0]}}" alt="" style="width: 455px; height: 600px">
+                        <!--<div class="about_text">-->
+                            <!--<span class="br"></span>-->
+                            <!--<h5 class="f_size_18 l_height28 mb-0">We take time to analyze each individual case submitted.</h5>-->
+                        <!--</div>-->
+                    </div>
+                    <div class="about_item w55">
+                        <img src="{{info.id_info.photos[1]}}" alt="" style="width: 520px; height: 300px">
+                        <!--<div class="about_text text_two">-->
+                            <!--<span class="br"></span>-->
+                            <!--<h5 class="f_size_18 l_height28 mb-0">Oxford butty bubble and squeak wind up, brown bread the full monty.</h5>-->
+                        <!--</div>-->
+                    </div>
+                    <div class="about_item w55">
+                        <img src="{{info.id_info.photos[2]}}" alt="" style="width: 520px; height: 300px">
+                        <!--<div class="about_text text_two">-->
+                            <!--<span class="br"></span>-->
+                            <!--<h5 class="f_size_18 l_height28 mb-0">Starkers dropped a clanger lurgy is cack excuse my French what.</h5>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="s_pricing_area sec_pad">
+        <div class="container custom_container">
+            <div class="row mb_30">
+                <div class="col-lg-9 col-sm-9">
+                    <div class="s_pricing-item"  style="text-align: left">
+                        <h5 class="f_p f_600 f_size_20 t_color mt_10 mb_15">Ratings and Reviews</h5>
+                                        
+                        <p [ngSwitch]="info.rating">
+                                <span style="margin-right: 20px;">
+                                    <img *ngSwitchCase="1" src="http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s1.0-MCID-5.svg">
+                                    <img *ngSwitchCase="2" src="http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s2.0-MCID-5.svg">
+                                    <img *ngSwitchCase="3" src="http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s3.0-MCID-5.svg">
+                                    <img *ngSwitchCase="4" src="http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s4.0-MCID-5.svg">
+                                    <img *ngSwitchCase="5" src="http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s5.0-MCID-5.svg">
+                                    <img *ngSwitchDefault src="http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s{{info.rating}}-MCID-5.svg">
+                                </span>
+                                {{info.review_count}}
+                        </p>
+
+                        <div class="row"  *ngFor="let r_item of info.id_review.reviews">
+                            <div class="col-lg-2 text-center">
+                                <img *ngIf="r_item.user.image_url != null" src="{{r_item.user.image_url}}" style="width: 100px; height: 100px; border-radius: 50px; border: solid 5px #33a68047">
+                                <img *ngIf="r_item.user.image_url == null" src="../../assets/img/user_large_square.png" style="width: 100px; height: 100px; border-radius: 50px; border: solid 5px #33a68047">
+                            </div>
+                            <div class="col-lg-10">
+                                <p [ngSwitch]="r_item.rating">
+                                    <span style="margin-right: 20px;">
+                                        <img *ngSwitchCase="1" src="http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s1.0-MCID-5.svg">
+                                        <img *ngSwitchCase="2" src="http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s2.0-MCID-5.svg">
+                                        <img *ngSwitchCase="3" src="http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s3.0-MCID-5.svg">
+                                        <img *ngSwitchCase="4" src="http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s4.0-MCID-5.svg">
+                                        <img *ngSwitchCase="5" src="http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s5.0-MCID-5.svg">
+                                        <img *ngSwitchDefault src="http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s{{r_item.rating}}-MCID-5.svg">
+                                    </span>
+                                    {{r_item.user.name}}
+                                </p>
+                                <p>{{r_item.text}}</p>
+                                <p style="text-align: right">{{r_item.time_created}}</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="s_pricing-item" style="text-align: left">
+                        <div class="container custom-container">
+                            <h5 class="f_p f_600 f_size_20 t_color mt_10 mb_15">You can leave your review and rating.</h5>
+                            <form name="form" (ngSubmit)="f.form.valid && addReview()" #f="ngForm" novalidate>
+                                <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !review.valid }">
+                                    <textarea type="text" rows="5" class="form-control" name="review" [(ngModel)]="model.review" #review="ngModel" required></textarea>
+                                    <div *ngIf="f.submitted && !review.valid" class="help-block">Review is required</div>
+                                </div>
+
+                                <div class="rating">
+                                        <span [ngClass]="status[4] ? 'checked' : ''"><input type="radio" name="user_rating" id="str5" value="5" [(ngModel)]="model.user_rating" (click)="set_rating($event)" #user_rating="ngModel" required><label for="str5" ></label></span>
+                                        <span [ngClass]="status[3] ? 'checked' : ''"><input type="radio" name="user_rating" id="str4" value="4" [(ngModel)]="model.user_rating" (click)="set_rating($event)" #user_rating="ngModel" required><label for="str4"></label></span>
+                                        <span [ngClass]="status[2] ? 'checked' : ''"><input type="radio" name="user_rating" id="str3" value="3" [(ngModel)]="model.user_rating" (click)="set_rating($event)" #user_rating="ngModel" required><label for="str3"></label></span>
+                                        <span [ngClass]="status[1] ? 'checked' : ''"><input type="radio" name="user_rating" id="str2" value="2" [(ngModel)]="model.user_rating" (click)="set_rating($event)" #user_rating="ngModel" required><label for="str2"></label></span>
+                                        <span [ngClass]="status[0] ? 'checked' : ''"><input type="radio" name="user_rating" id="str1" value="1" [(ngModel)]="model.user_rating" (click)="set_rating($event)" #user_rating="ngModel" required><label for="str1"></label></span>
+
+                                    <div *ngIf="f.submitted && !user_rating.valid" class="help-block">Rating is required</div>
+                                </div>
+
+                                <div class="form-group">
+                                    <button [disabled]="loading" class="btn_hover agency_banner_btn pay_btn pay_btn_two" style="margin-left: 0px">Submit</button>
+                                    <img *ngIf="loading"
+                                         src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-3">
+                    <div class="s_pricing-item"  style="text-align: left">
+                        <h5 class="f_p f_600 f_size_20 t_color mt_10 mb_15">Contact Details</h5>
+                        <div>
+                            <p><span><i class="ti-mobile"></i></span>{{ info.phone }}</p>
+                            <p><span><i class="ti-desktop"></i></span>{{ info.display_phone }}</p>
+                            <p *ngIf="info.id_info.hours == null"></p>
+                            <p *ngIf="info.id_info.hours != null &&  info.id_info.hours[0].is_open_now == false"><span><i class="ti-time"></i></span> Closed now </p>
+                            <p *ngIf="info.id_info.hours != null &&  info.id_info.hours[0].is_open_now == true"><span><i class="ti-time"></i></span> Opened now </p>
+                        </div>
+
+                        <h5 class="f_p f_600 f_size_20 t_color mt_10 mb_15">Opening Times</h5>
+                        <div *ngIf="info.id_info.hours != null">
+                            <div *ngFor="let h_item of info.id_info.hours[0].open">
+                                <p *ngIf="h_item.day == 0">Sun: {{ h_item.start[0] }}{{ h_item.start[1] }}:{{ h_item.start[2] }}{{ h_item.start[3] }} - {{ h_item.end[0] }}{{ h_item.end[1] }}:{{ h_item.end[2] }}{{ h_item.end[3] }}</p>
+                                <p *ngIf="h_item.day == 1">Mon: {{ h_item.start[0] }}{{ h_item.start[1] }}:{{ h_item.start[2] }}{{ h_item.start[3] }} - {{ h_item.end[0] }}{{ h_item.end[1] }}:{{ h_item.end[2] }}{{ h_item.end[3] }}</p>
+                                <p *ngIf="h_item.day == 2">Tue: {{ h_item.start[0] }}{{ h_item.start[1] }}:{{ h_item.start[2] }}{{ h_item.start[3] }} - {{ h_item.end[0] }}{{ h_item.end[1] }}:{{ h_item.end[2] }}{{ h_item.end[3] }}</p>
+                                <p *ngIf="h_item.day == 3">Wed: {{ h_item.start[0] }}{{ h_item.start[1] }}:{{ h_item.start[2] }}{{ h_item.start[3] }} - {{ h_item.end[0] }}{{ h_item.end[1] }}:{{ h_item.end[2] }}{{ h_item.end[3] }}</p>
+                                <p *ngIf="h_item.day == 4">Thu: {{ h_item.start[0] }}{{ h_item.start[1] }}:{{ h_item.start[2] }}{{ h_item.start[3] }} - {{ h_item.end[0] }}{{ h_item.end[1] }}:{{ h_item.end[2] }}{{ h_item.end[3] }}</p>
+                                <p *ngIf="h_item.day == 5">Fri: {{ h_item.start[0] }}{{ h_item.start[1] }}:{{ h_item.start[2] }}{{ h_item.start[3] }} - {{ h_item.end[0] }}{{ h_item.end[1] }}:{{ h_item.end[2] }}{{ h_item.end[3] }}</p>
+                                <p *ngIf="h_item.day == 6">Sat: {{ h_item.start[0] }}{{ h_item.start[1] }}:{{ h_item.start[2] }}{{ h_item.start[3] }} - {{ h_item.end[0] }}{{ h_item.end[1] }}:{{ h_item.end[2] }}{{ h_item.end[3] }}</p>
+                            </div>
+                        </div>
+
+                        <h5 class="f_p f_600 f_size_20 t_color mt_10 mb_15">Take a Reservation?</h5>
+                        <p *ngIf="info.id_info.transactions == null">No</p>
+                        <p *ngIf="info.id_info.transactions != null">No</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer_area footer_area_four pt_150 f_bg"  style="padding-top: 10px">
+        <div class="footer_bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 col-md-5 col-sm-6">
+                        <p class="mb-0 f_400">Copyright © 2020</p>
+                    </div>
+                    <div class="col-lg-4 col-md-3 col-sm-6">
+
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <ul class="list-unstyled f_menu text-right">
+                            <li><a href="#">Terms of Use</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>

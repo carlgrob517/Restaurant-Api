@@ -1,0 +1,65 @@
+﻿<div class="body_wrapper">
+    <section class="sign_in_area bg_color sec_pad">
+        <div class="container">
+            <div class="sign_info">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="login_info">
+                            <h2 class="f_p f_600 f_size_24 t_color3 mb_40">SIGN IN</h2>
+                            <form class="login-form sign-in-form" name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+                                <div class="form-group text_box" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+                                    <label for="username" class="f_p text_c f_400">E-mail</label>
+                                    <input type="text" placeholder="test@test.com" name="username" [(ngModel)]="model.username" #username="ngModel" required />
+                                    <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
+                                </div>
+                                <div class="form-group text_box" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+                                    <label class="f_p text_c f_400" for="password">Password</label>
+                                    <input type="password" placeholder="password" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+                                    <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+                                </div>
+                                <div class="extra mb_20">
+                                    <div class="checkbox remember">
+                                        <label>
+                                            <input type="checkbox"> Keep me Signed in
+                                        </label>
+                                    </div>
+                                    <!--//check-box-->
+                                    <div class="forgotten-password">
+                                        <!--<a href="#">Forgot Password?</a>-->
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <button [disabled]="loading" class="btn_three">SIGN IN</button>
+                                    <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                                    <!--<a [routerLink]="['/register']" class="btn_three">Register</a>-->
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer_area footer_area_four pt_150 f_bg"  style="padding-top: 10px">
+        <div class="footer_bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 col-md-5 col-sm-6">
+                        <p class="mb-0 f_400">Copyright © 2020</p>
+                    </div>
+                    <div class="col-lg-4 col-md-3 col-sm-6">
+
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <ul class="list-unstyled f_menu text-right">
+                            <li><a href="#">Terms of Use</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+

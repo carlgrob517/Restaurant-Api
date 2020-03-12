@@ -1,0 +1,45 @@
+﻿<div class="body_wrapper">
+    <section class="s_pricing_area sec_pad">
+        <div class="container custom_container">
+            <div class="review-pane">
+                <div class="container">
+                    <div class="col-md-12 vh-95 mt-5">
+                        <!--<a [routerLink]="['/review/add']"><button type="button" class="btn btn-primary float-right">Add</button></a>-->
+                        <!--<span class="badge badge-secondary px-5 mb-5" style="font-size: 28px">Reviews</span>-->
+                        <!--<div class="row">-->
+                        <!--<div class="col-md-12 mb-3" *ngFor="let review of reviews">-->
+                        <!--<div class="card">-->
+                        <!--<div class='card-body'>-->
+                        <!--<h5 class='card-title'>{{ review.review }}</h5>-->
+                        <!--<h5 class='card-title'>{{ review.user_rating }}</h5>-->
+                        <!--<button type="button" (click)="deleteReview(review._id['$oid'])" class="btn btn-info float-right">Delete</button>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <div class="row"  *ngFor="let review of reviews">
+                            <div class="col-lg-2 text-center">
+                                <img src="../../assets/img/user_large_square.png" style="width: 100px; height: 100px; border-radius: 50px; border: solid 5px #33a68047">
+                            </div>
+                            <div class="col-lg-10">
+                                <button type="button" (click)="deleteReview(review._id['$oid'])" class="btn btn-info float-right" style="   border-radius: 50%; background-color: #33a680; border: none"><i class="ti-close"></i></button>
+                                <p [ngSwitch]="review.user_rating">
+                                    <span style="margin-right: 20px;">
+                                        <img *ngSwitchCase="1" src="http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s1.0-MCID-5.svg">
+                                        <img *ngSwitchCase="2" src="http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s2.0-MCID-5.svg">
+                                        <img *ngSwitchCase="3" src="http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s3.0-MCID-5.svg">
+                                        <img *ngSwitchCase="4" src="http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s4.0-MCID-5.svg">
+                                        <img *ngSwitchCase="5" src="http://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s5.0-MCID-5.svg">
+                                    </span>
+                                </p>
+                                <p>{{review.review}}</p>
+                                <p style="text-align: right">{{review.created}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
