@@ -24,9 +24,14 @@ var ReviewAddComponent = /** @class */ (function () {
             'restaurant_id': 'res',
             'vote': '',
         };
+        this.reviewModel = {};
         this.info = {};
         this.loading = false;
+        this.showSpinner = false;
         this.status = [false, false, false, false, false];
+        this.offset = 0;
+        this.isGoogle = true;
+        this.isViewMore = true;
     }
     ReviewAddComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -37,6 +42,13 @@ var ReviewAddComponent = /** @class */ (function () {
             _this.restaurantService.getById(id).subscribe(function (data) {
                 _this.info = data;
                 _this.model['restaurant_id'] = _this.info._id['$oid'];
+                console.log(_this.viewMoreModel);
+                if (_this.info.google_location_id == "" && _this.info.tripadvisor_location_id == "") {
+                    _this.isViewMore = false;
+                }
+                else if (_this.info.google_location_id == "") {
+                    _this.isGoogle = false;
+                }
                 setTimeout(function () {
                     _this.map = new google.maps.Map(_this.mapRef.nativeElement, {
                         zoom: 10,
@@ -58,6 +70,60 @@ var ReviewAddComponent = /** @class */ (function () {
         }
         // @ts-ignore
         this.status[result - 1] = true;
+    };
+    ReviewAddComponent.prototype.viewMore = function () {
+        var _this = this;
+        if (this.isGoogle && this.model.google_location_id == "") {
+            this.isViewMore = false;
+            return;
+        }
+        if (!this.isGoogle && this.model.tripadvisor_location_id == "") {
+            this.isViewMore = false;
+            return;
+        }
+        if (this.isGoogle) {
+            this.viewMoreModel = {
+                query: this.info.alias,
+                offset: this.offset,
+                id: this.info._id['$oid'],
+                location_id: this.info.google_location_id ? this.info.google_location_id : '',
+                type: 'google'
+            };
+        }
+        else {
+            this.viewMoreModel = {
+                query: this.info.alias,
+                offset: this.offset,
+                id: this.info._id['$oid'],
+                location_id: this.info.tripadvisor_location_id ? this.info.tripadvisor_location_id : '',
+                type: 'tripadvisor'
+            };
+        }
+        if (!this.isGoogle && this.info.tripadvisor_location_id == '') {
+            this.isViewMore = false;
+            return;
+        }
+        this.showSpinner = true;
+        this.reviewService.viewMore(this.viewMoreModel)
+            .subscribe(function (data) {
+            var reviews = _this.info.id_review.reviews;
+            console.log(data);
+            for (var i = 0; i < data.length; i++) {
+                reviews.push(data[i]);
+            }
+            if (data.length < 5 || _this.info.tripadvisor_location_id == "") {
+                _this.isViewMore = false;
+            }
+            reviews.sort(function (a, b) { return (a.rating > b.rating) ? -1 : 1; });
+            _this.info.id_review.reviews = reviews;
+            _this.offset = _this.offset + 1;
+            _this.showSpinner = false;
+            //window.scroll(0,window.innerHeight);
+            _this.isGoogle = false;
+        }, function (error) {
+            _this.showSpinner = false;
+            console.log("aaah");
+        });
     };
     ReviewAddComponent.prototype.addReview = function () {
         var _this = this;

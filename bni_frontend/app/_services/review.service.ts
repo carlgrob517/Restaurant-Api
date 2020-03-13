@@ -1,7 +1,8 @@
 ﻿import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Review } from '../_models/index';
+import { Review, ViewMore } from '../_models/index';
+
 import {ConstantsService} from './common/constants.service';
 
 @Injectable()
@@ -34,4 +35,13 @@ export class ReviewService {
     delete(id: string) {
         return this.http.delete(this.url + '/api/reviews/delete/' + id);
     }
+
+    viewMore(viewMore:ViewMore){        
+        return this.http.post(this.url + '/api/viewMore', viewMore);
+    }
+
+    viewMoreGoogle(viewMore:ViewMore){
+        return this.http.post(this.url + '/api/viewMoreGoogle', viewMore);
+    }
+
 }

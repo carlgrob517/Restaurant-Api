@@ -36,6 +36,12 @@ var ReviewService = /** @class */ (function () {
     ReviewService.prototype.delete = function (id) {
         return this.http.delete(this.url + '/api/reviews/delete/' + id);
     };
+    ReviewService.prototype.viewMore = function (viewMore) {
+        return this.http.post(this.url + '/api/viewMore', viewMore);
+    };
+    ReviewService.prototype.viewMoreGoogle = function (viewMore) {
+        return this.http.post(this.url + '/api/viewMoreGoogle', viewMore);
+    };
     ReviewService = __decorate([
         core_1.Injectable(),
         __metadata("design:paramtypes", [http_1.HttpClient, constants_service_1.ConstantsService])

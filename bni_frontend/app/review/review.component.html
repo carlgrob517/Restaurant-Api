@@ -17,10 +17,9 @@
                                 <!--</div>-->
                             <!--</div>-->
                         <!--</div>-->
-                        {{reviews.length}}
+                        
                         <div class="row"  *ngFor="let review of reviews">
-                            <div class="col-lg-2 text-center">
-                                
+                            <div class="col-lg-2 text-center">                                
                                 <img  src="{{  review.profile_photo_url !== undefined ? review.profile_photo_url : '../../assets/img/user_large_square.png' }}" style="width: 100px; height: 100px; border-radius: 50px; border: solid 5px #33a68047">
                             </div>
                             <div class="col-lg-10">

@@ -6,4 +6,5 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./user"));
 __export(require("./review"));
 __export(require("./restaurant"));
+__export(require("./ViewMore"));
 //# sourceMappingURL=index.js.map

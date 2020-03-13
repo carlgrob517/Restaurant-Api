@@ -13,7 +13,7 @@ class user_controller:
         self.mongo = mongo
         self.app = app
         self.bcrypt = bcrypt
-        self.req = req;
+        self.req = req
           
     def login(self):
 
@@ -85,3 +85,4 @@ class user_controller:
 
         return jsonify({'result': result})
         
+

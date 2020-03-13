@@ -1,0 +1,31 @@
+{
+  "name": "BNI",
+  "version": "1.0.0",
+  "scripts": {
+    "start": " concurrently \"npm run tsc:w\" \"npm run lite\" ",
+    "lite": "lite-server",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@angular/common": "^5.2.11",
+    "@angular/compiler": "^5.2.11",
+    "@angular/core": "^5.2.11",
+    "@angular/forms": "^5.2.11",
+    "@angular/platform-browser": "^5.2.11",
+    "@angular/platform-browser-dynamic": "^5.2.11",
+    "@angular/router": "^5.2.11",
+    "@types/googlemaps": "^3.39.2",
+    "core-js": "^2.6.11",
+    "rxjs": "^5.5.12",
+    "systemjs": "^0.20.19",
+    "zone.js": "^0.8.29"
+  },
+  "devDependencies": {
+    "@types/node": "^8.10.59",
+    "concurrently": "^3.6.1",
+    "lite-server": "^2.5.4",
+    "typescript": "^2.9.2"
+  }
+}

@@ -103,8 +103,7 @@ export class DashboardComponent implements OnInit {
                 });
     }
 
-    write(info: any) {
-        console.log();
+    write(info: any) {        
         this.router.navigate(['review/add'], { queryParams: { 'id': info._id['$oid']}});
     }
 

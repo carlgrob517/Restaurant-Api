@@ -88,7 +88,6 @@ var DashboardComponent = /** @class */ (function () {
         });
     };
     DashboardComponent.prototype.write = function (info) {
-        console.log();
         this.router.navigate(['review/add'], { queryParams: { 'id': info._id['$oid'] } });
     };
     DashboardComponent.prototype.viewAll = function (id, name) {
